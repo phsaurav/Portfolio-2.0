@@ -89,6 +89,16 @@ DATABASES = {
         'PORT': '5432'
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'Portfolio_db',
+#          'USER': 'postgres',
+#          'PASSWORD': 'macbook29',
+#          'HOST': 'localhost',
+#         'PORT': '5432'
+#     }
+# }
 
 
 # Password validation
