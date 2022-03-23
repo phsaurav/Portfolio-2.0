@@ -13,6 +13,7 @@ django-cors-headers = "*"
 gunicorn = "*"
 django-heroku = "*"
 whitenoise = "*"
+heroku = "*"
 
 [dev-packages]
 
