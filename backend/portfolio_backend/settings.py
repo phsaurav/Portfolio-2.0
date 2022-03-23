@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-+7=w=y*z(9mdn^lo)p%78a*^8ez+=&3(k^+9ahvy@obidf!*cb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ddah.herokuapp.com']
+ALLOWED_HOSTS = ['ph-portfolio-api.herokuapp.com']
 
 
 # Application definition

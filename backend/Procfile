@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn pf_api.wsgi --log-file=-
+web: gunicorn portfolio_backend.wsgi --log-file=-
