@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import os
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +27,7 @@ SECRET_KEY = 'django-insecure-+7=w=y*z(9mdn^lo)p%78a*^8ez+=&3(k^+9ahvy@obidf!*cb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ddah.herokuapp.com']
 
 
 # Application definition
@@ -39,11 +41,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'pf_api.apps.PfApiConfig',
     'rest_framework',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -78,10 +82,10 @@ WSGI_APPLICATION = 'portfolio_backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Portfolio_db',
-        'USER': 'postgres',
-        'PASSWORD': 'macbook29',
-        'HOST': 'localhost',
+        'NAME': 'd769g188vuli04',
+        'USER': 'cdayhnwjkzfohj',
+        'PASSWORD': '9904a69834558fbb8e488f7bc6a9cdb63e4991ecb45a0d16b1f07a33f05738b2',
+        'HOST': 'ec2-52-201-124-168.compute-1.amazonaws.com',
         'PORT': '5432'
     }
 }
@@ -122,8 +126,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+django_heroku.settings(locals())
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CORS_ALLOW_ALL_ORIGINS = True

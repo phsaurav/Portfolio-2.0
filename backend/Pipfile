@@ -9,6 +9,10 @@ djangorestframework = "*"
 markdown = "*"
 django-filter = "*"
 psycopg2 = "*"
+django-cors-headers = "*"
+gunicorn = "*"
+django-heroku = "*"
+whitenoise = "*"
 
 [dev-packages]
 
