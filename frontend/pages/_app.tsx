@@ -1,7 +1,6 @@
-import "../styles/globals.css";
-import type { AppProps } from "next/app";
-import { CacheProvider } from "@emotion/react";
 import createCache from "@emotion/cache";
+import type { AppProps } from "next/app";
+import "../styles/globals.css";
 
 const cache = createCache({
 	key: "css",
@@ -10,9 +9,12 @@ const cache = createCache({
 
 function MyApp({ Component, pageProps }: AppProps) {
 	return (
-		<CacheProvider value={cache}>
-			<Component {...pageProps} />
-		</CacheProvider>
+		// <CacheProvider value={cache}>
+		// 	<Component {...pageProps} />
+		// </CacheProvider>
+		<div>
+			<h1>Working</h1>
+		</div>
 	);
 }
 
